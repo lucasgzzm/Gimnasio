@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Strong | Elite Fitness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="hero">
+        <nav class="glass-nav">
+            <div class="logo">BODY<span>STRONG</span></div>
+            <ul class="menu">
+                <li><a href="#planes">Planes</a></li>
+                <li><a href="#">Horarios</a></li>
+                <li><a href="#" class="btn-nav">¡Únete ahora!</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-text" data-aos="fade-up">
+            <span class="tagline">TALCA, CHILE</span>
+            <h1>SUPERA TUS <span>LÍMITES</span></h1>
+            <p>Alcanza tu mejor versión en el mejor ambiente de entrenamiento personalizado.</p>
+            <a href="#planes" class="btn-main">Ver Matrículas</a>
+        </div>
+        <div class="overlay"></div>
+    </section>
+
+    <section id="planes" class="planes-container">
+        <h2 data-aos="fade-down">MATRÍCULAS <span>DISPONIBLES</span></h2>
+        
+        <div class="grid-planes">
+            <div class="card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="card-header">
+                    <h3>GRUPAL</h3>
+                    <p class="precio">$45.000</p>
+                </div>
+                <div class="cupos-box">
+                    <div class="text-cupos">
+                        <span>Cupos disponibles</span>
+                        <strong>8 / 20</strong>
+                    </div>
+                    <div class="progress-bar"><div class="fill" style="width: 40%;"></div></div>
+                </div>
+                <button class="btn-card">Inscribirme</button>
+            </div>
+
+            <div class="card popular" data-aos="zoom-in" data-aos-delay="200">
+                <div class="popular-tag">MÁS POPULAR</div>
+                <div class="card-header">
+                    <h3>SEMI ASISTIDO</h3>
+                    <p class="precio">$60.000</p>
+                </div>
+                <div class="cupos-box">
+                    <div class="text-cupos">
+                        <span>🔥 ¡Quedan pocos!</span>
+                        <strong>3 / 15</strong>
+                    </div>
+                    <div class="progress-bar"><div class="fill alert" style="width: 20%;"></div></div>
+                </div>
+                <button class="btn-card active">Inscribirme</button>
+            </div>
+
+            <div class="card agotado" data-aos="zoom-in" data-aos-delay="300">
+                <div class="card-header">
+                    <h3>PERSONALIZADO</h3>
+                    <p class="precio">$120.000</p>
+                </div>
+                <div class="cupos-box">
+                    <div class="text-cupos">
+                        <span>Cupos disponibles</span>
+                        <strong>AGOTADO</strong>
+                    </div>
+                    <div class="progress-bar"><div class="fill" style="width: 0%;"></div></div>
+                </div>
+                <button class="btn-card" disabled>Lista de espera</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script> AOS.init({ duration: 1000, once: true }); </script>
+</body>
+</html>
