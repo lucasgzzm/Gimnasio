@@ -1,145 +1,176 @@
 :root {
-    --primary: #ff3131; /* Rojo vibrante */
-    --accent: #ffde59;  /* Amarillo logo */
+    --primary: #ff3131; /* Rojo */
+    --accent: #ffde59;  /* Amarillo */
     --dark: #0a0a0a;
     --glass: rgba(255, 255, 255, 0.05);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', sans-serif; background: var(--dark); color: white; overflow-x: hidden; }
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--dark); color: white; line-height: 1.6; }
 
-/* HERO CON IMAGEN Y DEGRADADO */
-.hero {
-    height: 100vh;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.1), var(--dark)), 
-                url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop'); /* Imagen de ejemplo, usa la tuya */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    padding: 0 10%;
-}
-
+/* NAV */
 .glass-nav {
-    position: fixed;
-    top: 0; left: 0; width: 100%;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 20px 10%;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-    background: rgba(0,0,0,0.5);
+    position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between;
+    padding: 20px 10%; z-index: 1000; backdrop-filter: blur(15px); background: rgba(0,0,0,0.7);
 }
-
-.logo { font-family: 'Syncopate', sans-serif; font-size: 1.5rem; }
+.logo { font-family: 'Syncopate', sans-serif; font-size: 1.2rem; }
 .logo span { color: var(--primary); }
+.menu { display: flex; list-style: none; gap: 25px; align-items: center; }
+.menu a { text-decoration: none; color: white; font-size: 0.9rem; }
+.btn-nav { background: var(--primary); padding: 8px 20px; border-radius: 50px; font-weight: bold; }
 
-.menu { display: flex; list-style: none; align-items: center; gap: 30px; }
-.menu a { text-decoration: none; color: white; font-weight: 400; transition: 0.3s; }
-.menu a:hover { color: var(--primary); }
-
-.btn-nav { background: var(--primary); padding: 10px 20px; border-radius: 50px; font-weight: bold; }
-
-/* TEXTO HERO */
-.hero-text h1 { font-family: 'Syncopate', sans-serif; font-size: 4.5rem; line-height: 1; margin: 20px 0; }
-.hero-text h1 span { color: var(--primary); text-shadow: 0 0 20px rgba(255,49,49,0.5); }
-.tagline { color: var(--accent); letter-spacing: 5px; font-weight: bold; }
-.btn-main { display: inline-block; padding: 15px 40px; background: white; color: black; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 20px; transition: 0.3s; }
-.btn-main:hover { background: var(--primary); color: white; transform: scale(1.05); }
-
-/* SECCIÓN PLANES */
-.planes-container { padding: 100px 10%; text-align: center; }
-.planes-container h2 { font-family: 'Syncopate', sans-serif; margin-bottom: 50px; font-size: 2.5rem; }
-.planes-container h2 span { color: var(--primary); }
-
-.grid-planes { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-
-/* TARJETAS CON EFECTO GLASSMORFISMO */
-.card {
-    background: var(--glass);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 40px;
-    border-radius: 20px;
-    backdrop-filter: blur(5px);
-    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
+/* HERO */
+.hero {
+    height: 80vh;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), var(--dark)), 
+                url('tu-imagen.jpg'); /* REEMPLAZAR CON TU FOTO */
+    background-size: cover; background-position: center;
+    display: flex; align-items: center; padding: 0 10%;
 }
+.hero-text h1 { font-family: 'Syncopate', sans-serif; font-size: clamp(2rem, 8vw, 4rem); margin: 20px 0; }
+.hero-text h1 span { color: var(--primary); text-shadow: 0 0 15px rgba(255,49,49,0.5); }
+.tagline { color: var(--accent); letter-spacing: 4px; font-weight: bold; }
+.btn-main { display: inline-block; padding: 15px 35px; background: white; color: black; text-decoration: none; font-weight: bold; border-radius: 5px; }
 
-.card:hover { transform: translateY(-15px); border-color: var(--primary); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+/* PLANES */
+.planes-container { padding: 80px 10%; text-align: center; }
+.grid-planes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
+.card { background: var(--glass); padding: 40px 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; position: relative; }
+.card:hover { transform: translateY(-10px); border-color: var(--primary); }
+.popular { border: 2px solid var(--primary); transform: scale(1.05); }
+.popular-tag { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; }
+.precio { font-size: 2.5rem; font-weight: bold; color: var(--accent); margin: 15px 0; }
 
-.popular { border: 2px solid var(--primary); background: rgba(255,49,49,0.05); }
-.popular-tag { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
-
-.precio { font-size: 3rem; font-weight: 700; margin: 20px 0; color: var(--accent); }
-
-/* BARRAS DE PROGRESO DINÁMICAS */
-.cupos-box { margin: 30px 0; text-align: left; }
-.text-cupos { display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 10px; }
-.progress-bar { background: rgba(255,255,255,0.1); height: 8px; border-radius: 10px; overflow: hidden; }
-.fill { background: var(--accent); height: 100%; transition: 1s ease-in-out; }
+/* BARRAS */
+.cupos-box { margin: 25px 0; text-align: left; }
+.text-cupos { display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 8px; }
+.progress-bar { background: rgba(255,255,255,0.1); height: 6px; border-radius: 10px; }
+.fill { background: var(--accent); height: 100%; border-radius: 10px; }
 .fill.alert { background: var(--primary); box-shadow: 0 0 10px var(--primary); }
-
-.btn-card { width: 100%; padding: 15px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; background: white; transition: 0.3s; }
+.btn-card { width: 100%; padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
 .btn-card.active { background: var(--primary); color: white; }
-.btn-card:hover:not(:disabled) { letter-spacing: 2px; }
 
-.agotado { opacity: 0.5; filter: grayscale(1); }
+/* HORARIOS */
+.horarios-section { padding: 80px 10%; background: #050505; text-align: center; }
+.tabla-wrapper { overflow-x: auto; margin-top: 40px; border-radius: 15px; border: 1px solid #222; }
+.horarios-table { width: 100%; border-collapse: collapse; min-width: 700px; }
+.horarios-table th { background: var(--primary); padding: 15px; font-family: 'Syncopate'; font-size: 0.7rem; }
+.horarios-table td { padding: 15px; border: 1px solid #111; font-size: 0.9rem; }
+.hora-td { background: #111; font-weight: bold; color: var(--accent); }
+.c-grupal { color: #59c0ff; }
+.c-semi { color: var(--accent); }
+.c-libre { color: #4ade80; }
 
-/* --- AJUSTES PARA DISPOSITIVOS MÓVILES Y TABLETS --- */
-
-@media (max-width: 1024px) {
-    .hero-text h1 {
-        font-size: 3.5rem; /* Achicamos un poco el título en tablets */
-    }
-}
-
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    /* Ajuste del Header/Hero */
-    .hero {
-        height: 80vh; /* Más alto en el cel para que luzca la foto */
-        padding: 0 5%;
-        text-align: center;
-        justify-content: center;
-    }
-
-    .hero-text h1 {
-        font-size: 2.5rem; /* Título más acorde al ancho del cel */
-    }
-
-    .glass-nav {
-        padding: 15px 5%;
-    }
-
-    .menu {
-        display: none; /* Ocultamos el menú largo para móviles (se suele usar un icono de hamburguesa) */
-    }
-
-    /* Ajuste de las Tarjetas de Matrículas */
-    .grid-planes {
-        grid-template-columns: 1fr; /* Una tarjeta por fila en lugar de tres */
-        gap: 20px;
-    }
-
-    .card {
-        padding: 30px 20px;
-    }
-
-    .card.popular {
-        transform: scale(1); /* Quitamos el aumento de tamaño para que no choque con otras tarjetas */
-        order: -1; /* ¡Importante! Pone el plan más popular arriba de todos en el celular */
-    }
-
-    .planes-container h2 {
-        font-size: 1.8rem;
-    }
+    .menu { display: none; } /* Ocultar menú en móvil */
+    .hero { text-align: center; height: 70vh; padding: 0 5%; }
+    .grid-planes { grid-template-columns: 1fr; }
+    .popular { transform: scale(1); order: -1; } /* Popular primero en móvil */
+    .planes-container h2, .horarios-section h2 { font-size: 1.5rem; }
+}
+/* --- ESTILOS HORARIOS SEGÚN IMÁGENES --- */
+.horarios-info {
+    padding: 60px 10%;
+    text-align: center;
+    background: #000;
 }
 
-/* Ajuste extra para celulares muy pequeños */
+.horarios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.horario-item {
+    background: var(--glass);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid var(--primary);
+}
+
+.horario-item h4 {
+    color: var(--accent);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* TABLA DE CLASES */
+.clases-grupales {
+    padding: 60px 10%;
+    background: var(--dark);
+    text-align: center;
+}
+
+.clases-grupales h3 {
+    font-family: 'Syncopate', sans-serif;
+    margin-bottom: 30px;
+}
+
+.clase-pump { color: #ff3131; font-weight: bold; }
+.clase-combat { color: #fff; font-weight: bold; }
+.clase-funcional { color: var(--accent); font-weight: bold; }
+
+.nota {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* Ajuste Hero con tu imagen real */
+.hero {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), var(--dark)), 
+                url('tu-equipo-gym.png'); /* Usa la foto de grupo que subiste */
+}
+/* --- ESTILOS DE BOTONES HERO --- */
+.hero-btns {
+    display: flex;
+    gap: 15px; /* Espacio entre botones */
+    margin-top: 25px;
+}
+
+.btn-main {
+    display: inline-block;
+    padding: 15px 35px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-sec {
+    display: inline-block;
+    padding: 15px 35px;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid white;
+    transition: 0.3s;
+}
+
+.btn-main:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-sec:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* Ajuste para que en móviles los botones se apilen si no caben */
 @media (max-width: 480px) {
-    .hero-text h1 {
-        font-size: 2rem;
+    .hero-btns {
+        flex-direction: column;
     }
-    
-    .btn-main {
-        width: 100%; /* El botón ocupa todo el ancho */
+    .btn-main, .btn-sec {
+        text-align: center;
+        width: 100%;
     }
 }

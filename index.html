@@ -3,82 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Body Strong | Elite Fitness</title>
+    <title>Body Strong | Studio Fitness Talca</title>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <section class="hero">
-        <nav class="glass-nav">
-            <div class="logo">BODY<span>STRONG</span></div>
-            <ul class="menu">
-                <li><a href="#planes">Planes</a></li>
-                <li><a href="#">Horarios</a></li>
-                <li><a href="#" class="btn-nav">¡Únete ahora!</a></li>
-            </ul>
-        </nav>
+    <nav class="glass-nav">
+        <div class="logo">BODY<span>STRONG</span></div>
+        <ul class="menu">
+            <li><a href="#planes">Planes</a></li>
+            <li><a href="#horarios">Horarios</a></li>
+            <li><a href="https://www.instagram.com/bodystronglasrastras/" target="_blank" class="btn-nav">Instagram</a></li>
+        </ul>
+    </nav>
 
+    <header class="hero">
         <div class="hero-text" data-aos="fade-up">
             <span class="tagline">TALCA, CHILE</span>
             <h1>SUPERA TUS <span>LÍMITES</span></h1>
-            <p>Alcanza tu mejor versión en el mejor ambiente de entrenamiento personalizado.</p>
-            <a href="#planes" class="btn-main">Ver Matrículas</a>
+            <p>Avenida Las Rastras 1545. Grupal | Semi asistido | Personalizado</p>
+            <div class="hero-btns">
+                <a href="#planes" class="btn-main">Ver Matrículas</a>
+                <a href="https://www.google.com/maps/place/?q=place_id:ChIJi8ABZCnHZZYRe0PJ2v3DAyE" target="_blank" class="btn-sec">Ubicación</a>
+            </div>
         </div>
-        <div class="overlay"></div>
-    </section>
+    </header>
 
     <section id="planes" class="planes-container">
-        <h2 data-aos="fade-down">MATRÍCULAS <span>DISPONIBLES</span></h2>
-        
+        <h2 data-aos="fade-down">PLANES Y <span>CUPOS</span></h2>
         <div class="grid-planes">
-            <div class="card" data-aos="zoom-in" data-aos-delay="100">
-                <div class="card-header">
-                    <h3>GRUPAL</h3>
-                    <p class="precio">$45.000</p>
-                </div>
+            <div class="card" data-aos="zoom-in">
+                <h3>GRUPAL</h3>
                 <div class="cupos-box">
-                    <div class="text-cupos">
-                        <span>Cupos disponibles</span>
-                        <strong>8 / 20</strong>
-                    </div>
+                    <div class="text-cupos"><span>Disponibles</span><strong>8 / 20</strong></div>
                     <div class="progress-bar"><div class="fill" style="width: 40%;"></div></div>
                 </div>
                 <button class="btn-card">Inscribirme</button>
             </div>
-
             <div class="card popular" data-aos="zoom-in" data-aos-delay="200">
                 <div class="popular-tag">MÁS POPULAR</div>
-                <div class="card-header">
-                    <h3>SEMI ASISTIDO</h3>
-                    <p class="precio">$60.000</p>
-                </div>
+                <h3>SEMI ASISTIDO</h3>
                 <div class="cupos-box">
-                    <div class="text-cupos">
-                        <span>🔥 ¡Quedan pocos!</span>
-                        <strong>3 / 15</strong>
-                    </div>
+                    <div class="text-cupos"><span>🔥 ¡Últimos cupos!</span><strong>3 / 15</strong></div>
                     <div class="progress-bar"><div class="fill alert" style="width: 20%;"></div></div>
                 </div>
                 <button class="btn-card active">Inscribirme</button>
             </div>
-
-            <div class="card agotado" data-aos="zoom-in" data-aos-delay="300">
-                <div class="card-header">
-                    <h3>PERSONALIZADO</h3>
-                    <p class="precio">$120.000</p>
-                </div>
+            <div class="card" data-aos="zoom-in">
+                <h3>PERSONALIZADO</h3>
                 <div class="cupos-box">
-                    <div class="text-cupos">
-                        <span>Cupos disponibles</span>
-                        <strong>AGOTADO</strong>
-                    </div>
-                    <div class="progress-bar"><div class="fill" style="width: 0%;"></div></div>
+                    <div class="text-cupos"><span>Estado</span><strong>Consultar</strong></div>
+                    <div class="progress-bar"><div class="fill" style="width: 100%;"></div></div>
                 </div>
-                <button class="btn-card" disabled>Lista de espera</button>
+                <button class="btn-card">Contactar</button>
             </div>
         </div>
+    </section>
+
+    <section id="horarios" class="horarios-info" data-aos="fade-up">
+        <h2>NUESTROS <span>HORARIOS</span></h2>
+        <div class="horarios-grid">
+            <div class="horario-item">
+                <h4>Lunes a Viernes</h4>
+                <p>06:00 a.m. a 22:00 p.m.</p>
+            </div>
+            <div class="horario-item">
+                <h4>Sábados</h4>
+                <p>09:00 a.m. a 15:00 p.m.</p>
+            </div>
+            <div class="horario-item">
+                <h4>Domingos</h4>
+                <p>10:00 a.m. a 13:00 p.m.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="clases-grupales" data-aos="fade-up">
+        <h3>CLASES <span>GRUPALES</span></h3>
+        <div class="tabla-wrapper">
+            <table class="horarios-table">
+                <thead>
+                    <tr>
+                        <th>Hora</th>
+                        <th>Lunes</th>
+                        <th>Martes</th>
+                        <th>Miércoles</th>
+                        <th>Jueves</th>
+                        <th>Viernes</th>
+                        <th>Sábado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="hora-col">11:00</td>
+                        <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                        <td class="clase-funcional">Funcional Training</td>
+                    </tr>
+                    <tr>
+                        <td class="hora-col">12:00</td>
+                        <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                        <td class="clase-combat">Body Combat</td>
+                    </tr>
+                    <tr>
+                        <td class="hora-col">19:00</td>
+                        <td class="clase-pump">Body Pump</td>
+                        <td class="clase-funcional">Funcional</td>
+                        <td class="clase-pump">Body Pump</td>
+                        <td class="clase-funcional">Funcional</td>
+                        <td class="clase-funcional">Funcional</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td class="hora-col">20:00</td>
+                        <td class="clase-combat">Body Combat</td>
+                        <td class="clase-combat">Body Combat</td>
+                        <td class="clase-combat">Body Combat</td>
+                        <td class="clase-combat">Body Combat</td>
+                        <td class="clase-combat">Body Combat</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="nota">* Horarios sujetos a cambios en días festivos.</p>
     </section>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
