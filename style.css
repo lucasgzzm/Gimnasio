@@ -83,3 +83,63 @@ body { font-family: 'Inter', sans-serif; background: var(--dark); color: white; 
 .btn-card:hover:not(:disabled) { letter-spacing: 2px; }
 
 .agotado { opacity: 0.5; filter: grayscale(1); }
+
+/* --- AJUSTES PARA DISPOSITIVOS MÓVILES Y TABLETS --- */
+
+@media (max-width: 1024px) {
+    .hero-text h1 {
+        font-size: 3.5rem; /* Achicamos un poco el título en tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajuste del Header/Hero */
+    .hero {
+        height: 80vh; /* Más alto en el cel para que luzca la foto */
+        padding: 0 5%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem; /* Título más acorde al ancho del cel */
+    }
+
+    .glass-nav {
+        padding: 15px 5%;
+    }
+
+    .menu {
+        display: none; /* Ocultamos el menú largo para móviles (se suele usar un icono de hamburguesa) */
+    }
+
+    /* Ajuste de las Tarjetas de Matrículas */
+    .grid-planes {
+        grid-template-columns: 1fr; /* Una tarjeta por fila en lugar de tres */
+        gap: 20px;
+    }
+
+    .card {
+        padding: 30px 20px;
+    }
+
+    .card.popular {
+        transform: scale(1); /* Quitamos el aumento de tamaño para que no choque con otras tarjetas */
+        order: -1; /* ¡Importante! Pone el plan más popular arriba de todos en el celular */
+    }
+
+    .planes-container h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Ajuste extra para celulares muy pequeños */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .btn-main {
+        width: 100%; /* El botón ocupa todo el ancho */
+    }
+}
