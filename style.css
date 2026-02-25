@@ -19,13 +19,49 @@ body { font-family: 'Inter', sans-serif; background: var(--dark); color: white; 
 .menu a { text-decoration: none; color: white; font-size: 0.8rem; text-transform: uppercase; }
 .btn-nav { background: var(--primary); padding: 8px 15px; border-radius: 50px; font-weight: bold; }
 
-/* HERO */
+/* HERO CON EFECTO DE DESVANECIMIENTO AL BAJAR */
 .hero {
     height: 100vh;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.3), var(--dark)), 
-                url('tu-imagen-equipo.jpg'); /* REEMPLAZAR CON TU FOTO */
-    background-size: cover; background-position: center;
-    display: flex; align-items: center; padding: 0 10%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    
+    /* La imagen se mantiene fija y el contenido pasa sobre ella */
+    background-image: 
+        linear-gradient(to bottom, 
+            rgba(10, 10, 10, 0.2) 0%, 
+            rgba(10, 10, 10, 0.5) 50%, 
+            var(--dark) 100% /* Aquí es donde la imagen desaparece por completo */
+        ), 
+        url('SaveClip.App_542030225_18375620758194187_2956336539530422465_n.jpg'); /* Asegúrate que el nombre coincida */
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Mantiene la imagen estática al bajar */
+    background-repeat: no-repeat;
+}
+
+/* Ajuste para móviles: El efecto 'fixed' suele fallar en celulares, 
+   así que lo suavizamos para que no salte la imagen */
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+        height: 80vh; /* Un poco más corta en celular */
+        background-image: 
+            linear-gradient(to bottom, 
+                rgba(10, 10, 10, 0.3) 0%, 
+                var(--dark) 100%
+            ), 
+            url('tu-imagen-equipo.jpg');
+    }
+}
+/* Ajuste para que en celulares no se rompa el parallax (algunos móviles no lo soportan bien) */
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll; /* Cambia a scroll normal en móviles para mejor rendimiento */
+        background-position: center center;
+    }
 }
 .hero-text h1 { font-family: 'Syncopate', sans-serif; font-size: clamp(2rem, 8vw, 4.5rem); line-height: 1.1; margin: 20px 0; }
 .hero-text h1 span { color: var(--primary); text-shadow: 0 0 20px rgba(255,49,49,0.4); }
