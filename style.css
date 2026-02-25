@@ -8,6 +8,30 @@
 * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 body { font-family: 'Inter', sans-serif; background: var(--dark); color: white; overflow-x: hidden; }
 
+:root{
+  --maxw: 1200px;
+}
+
+.glass-nav,
+.planes-container,
+.horarios-info,
+.clases-grupales,
+.hero{
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+@media (max-width: 768px){
+  .glass-nav,
+  .planes-container,
+  .horarios-info,
+  .clases-grupales,
+  .hero{
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
 /* NAV */
 .glass-nav {
     position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center;
@@ -19,27 +43,35 @@ body { font-family: 'Inter', sans-serif; background: var(--dark); color: white; 
 .menu a { text-decoration: none; color: white; font-size: 0.8rem; text-transform: uppercase; }
 .btn-nav { background: var(--primary); padding: 8px 15px; border-radius: 50px; font-weight: bold; }
 
-/* HERO CON EFECTO DE DESVANECIMIENTO AL BAJAR */
-.hero {
-    height: 100vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 0 10%;
-    
-    /* La imagen se mantiene fija y el contenido pasa sobre ella */
-    background-image: 
-        linear-gradient(to bottom, 
-            rgba(10, 10, 10, 0.2) 0%, 
-            rgba(10, 10, 10, 0.5) 50%, 
-            var(--dark) 100% /* Aquí es donde la imagen desaparece por completo */
-        ), 
-        url('SaveClip.App_542030225_18375620758194187_2956336539530422465_n.jpg'); /* Asegúrate que el nombre coincida */
-    
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Mantiene la imagen estática al bajar */
-    background-repeat: no-repeat;
+.hero{
+  min-height: 100svh; /* mejor que 100vh en móviles */
+  display:flex;
+  align-items:center;
+  padding: 0 10%;
+  position:relative;
+
+  background-image:
+    linear-gradient(to bottom,
+      rgba(10,10,10,.25) 0%,
+      rgba(10,10,10,.55) 55%,
+      var(--dark) 100%
+    ),
+    url('SaveClip.App_542030225_18375620758194187_2956336539530422465_n.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Móvil/tablet: sin cambiar la imagen, solo desactivamos "fixed" para que no falle */
+@media (max-width: 768px){
+  .hero{
+    min-height: 80svh;
+    padding: 0 5%;
+    background-attachment: scroll;
+    background-position: center center;
+  }
 }
 
 /* Ajuste para móviles: El efecto 'fixed' suele fallar en celulares, 
